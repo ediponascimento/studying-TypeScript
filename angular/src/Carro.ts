@@ -1,4 +1,4 @@
-class Carro {
+export class Carro {
 
     private modelo: string;
     private numeroDePortas: number;
@@ -22,3 +22,4 @@ class Carro {
     }
 
 }
+

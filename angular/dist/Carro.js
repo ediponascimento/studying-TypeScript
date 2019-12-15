@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var Carro = /** @class */ (function () {
     function Carro(modelo, numeroDePortas) {
         this.velocidade = 10;
@@ -16,3 +17,4 @@ var Carro = /** @class */ (function () {
     };
     return Carro;
 }());
+exports.Carro = Carro;

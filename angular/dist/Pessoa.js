@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var Pessoa = /** @class */ (function () {
     function Pessoa(nome, carroPreferido) {
         this.nome = nome;
@@ -18,6 +19,4 @@ var Pessoa = /** @class */ (function () {
     };
     return Pessoa;
 }());
-var pessoa = new Pessoa('José', 'Veloster');
-console.log(pessoa.dizerCarroPreferido());
-console.log(pessoa.dizerNome());
+exports.Pessoa = Pessoa;

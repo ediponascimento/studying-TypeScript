@@ -1,17 +1,20 @@
-class Concessionaria {
+import { Carro } from './Carro';
+
+export class Concessionaria {
     
     private endereco: string;
-    private listaDeCarros: any;
+    private listaDeCarros: Carro[];
 
-    constructor (endereco: string) {
+    constructor (endereco: string, listaDeCarros: Carro[]) {
         this.endereco = endereco;
+        this.listaDeCarros = listaDeCarros;
     }
 
-    private fornecerEndereco (): string {
+    public fornecerEndereco (): string {
         return this.endereco;
     }
 
-    public mostrarListaDeCarros (): any {
+    public mostrarListaDeCarros (): Carro[] {
         return this.listaDeCarros;
     }
 }
