@@ -22,4 +22,5 @@ concessionaria.mostrarListaDeCarros().map(function (carro) {
         return cliente.comprarCarro(carro);
     }
 });
+console.log(concessionaria.fornecerHorarioDeFuncionamento());
 console.log(cliente.dizerCarroQueTem());

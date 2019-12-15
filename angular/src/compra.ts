@@ -28,5 +28,6 @@ concessionaria.mostrarListaDeCarros().map((carro: Carro) => {
 });
 
 
+console.log(concessionaria.fornecerHorarioDeFuncionamento());
 
 console.log(cliente.dizerCarroQueTem());

@@ -1,0 +1,3 @@
+interface IConcessionaria {
+    fornecerHorarioDeFuncionamento(): string;
+}
