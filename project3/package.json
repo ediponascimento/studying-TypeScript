@@ -1,0 +1,18 @@
+{
+  "name": "project3",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start:build": "tsc -watch",
+    "start:run": "nodemon build/index.js",
+    "start": "concurrently npm:start:*"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^13.1.8",
+    "concurrently": "^5.0.2"
+  }
+}
