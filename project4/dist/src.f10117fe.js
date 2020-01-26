@@ -146,6 +146,18 @@ function () {
     this.events[eventName] = handlers;
   };
 
+  User.prototype.trigger = function (eventName) {
+    var handlers = this.events[eventName];
+
+    if (!handlers || handlers.length === 0) {
+      return;
+    }
+
+    handlers.forEach(function (calback) {
+      return calback();
+    });
+  };
+
   return User;
 }();
 
@@ -160,10 +172,17 @@ Object.defineProperty(exports, "__esModule", {
 var User_1 = require("./models/User");
 
 var user = new User_1.User({});
-user.on('click', function () {});
-user.on('click', function () {});
-user.on('test', function () {});
-console.log(user);
+user.on('change', function () {
+  console.log('#change 1');
+});
+user.on('change', function () {
+  console.log('#cgange 2');
+});
+user.on('save', function () {
+  console.log('Save was triggered');
+});
+user.trigger('change');
+user.trigger('save');
 },{"./models/User":"src/models/User.ts"}],"../../../../../usr/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
