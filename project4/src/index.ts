@@ -2,7 +2,7 @@ import { User } from './models/User';
 
 const user = new User({});
 
-user.set({ name: 'Édipo Nascimento', age: 32 });
-
-console.log(user.get('name'));
-console.log(user.get('age'));
+user.on('click', () => {});
+user.on('click', () => {});
+user.on('test', () => {});
+console.log(user);

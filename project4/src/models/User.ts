@@ -2,6 +2,8 @@ import { UserProps } from '../interfaces/UserProps';
 import { Calback } from '../types/UserType';
 
 export class User {
+  events: { [key: string]: Calback[] } = {};
+
   constructor(private data: UserProps) { }
 
   get(propName: string): UserProps {
@@ -12,8 +14,10 @@ export class User {
     Object.assign(this.data, user);
   }
 
-  on(eventName: string, callback: Calback) {
-
+  on(eventName: string, callback: Calback): void {
+    const handlers = this.events[eventName] || [];
+    handlers.push(callback);
+    this.events[eventName] = handlers;      
   }
 
 }

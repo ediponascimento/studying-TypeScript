@@ -1,3 +1,1 @@
-export type Calback = [
-  
-]
+export type Calback = () => void;
