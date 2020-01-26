@@ -1,3 +1,9 @@
 {
-  "users": []
+  "users": [
+    {
+      "name": "Édipo Nascimento",
+      "age": 25,
+      "id": 1
+    }
+  ]
 }
