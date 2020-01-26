@@ -1,4 +1,3 @@
-export type UserType = [
-  string,
-  number
-];
+export type Calback = [
+  
+]
