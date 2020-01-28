@@ -1,3 +1,4 @@
+import axios, { AxiosResponse } from 'axios';
 import { UserProps } from '../interfaces/UserProps';
 import { Calback } from '../types/UserType';
 
@@ -28,5 +29,12 @@ export class User {
     }
 
     handlers.forEach(calback => calback());
+  }
+
+  fetch(): void {
+    axios.get(`http://localhost:3000/users/${this.get('id')}`)
+    .then((response: AxiosResponse): void => {
+      this.set(response.data);
+    });
   }
 }
