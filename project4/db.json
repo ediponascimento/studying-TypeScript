@@ -1,9 +1,14 @@
 {
   "users": [
     {
-      "name": "Édipo Nascimento",
-      "age": 25,
+      "age": 7,
+      "name": "Sophia Nascimento",
       "id": 1
+    },
+    {
+      "age": 7,
+      "name": "Sophia Nascimento",
+      "id": 2
     }
   ]
 }
