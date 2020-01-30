@@ -1,14 +1,3 @@
 {
-  "users": [
-    {
-      "age": 7,
-      "name": "Sophia Nascimento",
-      "id": 1
-    },
-    {
-      "age": 7,
-      "name": "Sophia Nascimento",
-      "id": 2
-    }
-  ]
+  "users": []
 }
