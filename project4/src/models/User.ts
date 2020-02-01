@@ -8,15 +8,4 @@ export class User {
 
   public events: Eventing = new Eventing();
   public sync: Sync<UserProps> = new Sync<UserProps>(rootUrl);
-
-  constructor(private data: UserProps) { }
-
-
-  get(propName: string): UserProps {
-    return this.data[propName];
-  }
-
-  set(user: UserProps): void {
-    Object.assign(this.data, user);
-  }
 }
