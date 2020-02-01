@@ -5,17 +5,7 @@ export class Attributes<T> {
     return this.data[key];
   }
 
-  set(user: T): void {
-    Object.assign(this.data, user);
+  set(update: T): void {
+    Object.assign(this.data, update);
   }
 }
-
-const attr = new Attributes({
-  id: 5,
-  age: 25,
-  name: 'Édipo Nascimento'
-});
-
-const id = attr.get('id');
-const name = attr.get('name');
-const age = attr.get('age');
