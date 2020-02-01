@@ -1,10 +1,17 @@
 import { User } from './models/User';
 
-const user = new User({ age: 7, name: 'Sophia Nascimento' });
+const user = new User({ name: 'Enzo Nascimento', age: 4 });
 
-console.log(user.get('name'));
-user.on('change', () => {
-    console.log('user was change');
+user.on('save', () => {
+    console.log('A new user was created');
+});
+
+user.on('error', () => {
+    console.log('An error has ocurred');
 })
 
-user.trigger('change');
+user.on('change', () => {
+    console.log('user has been changed');
+})
+
+user.save();
