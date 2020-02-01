@@ -3,3 +3,7 @@ export interface UserProps {
   age?: number;
   id?: number;
 }
+
+export interface HasId {
+  id?: number;
+}
