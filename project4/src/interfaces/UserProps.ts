@@ -1,4 +1,4 @@
-import { AxiosPromise, AxiosResponse } from 'axios';
+import { AxiosPromise } from 'axios';
 
 export interface UserProps {
   name?: string;
@@ -17,11 +17,11 @@ export interface ModelAttributes<T> {
 }
 
 export interface Sync<T> {
-  fetch(id: number): AxiosResponse;
+  fetch(id: number): AxiosPromise;
   save(data: T): AxiosPromise;
 }
 
 export interface Events {
-  on(eventName: string, callback:() => void): void;
+  on(eventName: string, callback: () => void): void;
   trigger(eventName: string): void;
 }
