@@ -4,8 +4,10 @@ export class UserForm {
 
   template(): string {
     return `
-      <div></div>
-      <input />
+      <div>
+        <h1>User Form</h1>
+        <input />
+      </div>
     `
   }
 
