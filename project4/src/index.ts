@@ -8,4 +8,4 @@ const userForm = new UserForm(
     user
 );
 
-userForm.render();  
+userForm.render();
