@@ -2,7 +2,16 @@ import { User } from '../models/User';
 
 export class UserForm {
 
-  constructor(public parent: Element, public model: User) { }
+  constructor(public parent: Element, public model: User) {
+    this.bindModel();
+  }
+
+
+  bindModel(){
+    this.model.on('change', () => {
+      this.render();  
+    })
+  }
 
   eventsMap(): { [key: string]: () => void } {
     return {
@@ -10,8 +19,8 @@ export class UserForm {
     };
   }
 
-  onSetAgeClick() {
-    console.log('button was clicked');
+  onSetAgeClick = () => {
+    this.model.setRandomAge();
   }
 
   template(): string {
@@ -40,6 +49,8 @@ export class UserForm {
   }
 
   render(): void {
+    this.parent.innerHTML = '';
+
     const templateElement = document.createElement('template');
     templateElement.innerHTML = this.template();
     this.bindEvents(templateElement.content);
