@@ -1,5 +1,5 @@
 import axios, { AxiosResponse, AxiosPromise } from 'axios';
-import { HasId } from '../interfaces/UserProps';
+import { HasId } from '../interfaces/IProperties';
 
 export class ApiSync<T extends HasId> {
 

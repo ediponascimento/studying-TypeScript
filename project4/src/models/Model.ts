@@ -1,5 +1,5 @@
 import { AxiosResponse } from 'axios';
-import { ModelAttributes, Sync, Events, HasId } from '../interfaces/UserProps';
+import { ModelAttributes, Sync, Events, HasId } from '../interfaces/IProperties';
 
 export class Model<T extends HasId> {
   constructor(

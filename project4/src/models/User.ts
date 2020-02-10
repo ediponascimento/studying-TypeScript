@@ -1,12 +1,16 @@
 import { Model } from '../models/Model';
-import { UserProps } from '../interfaces/UserProps';
 import { Attributes } from '../models/Attributes';
 import { ApiSync } from '../models/ApiSync';
 import { Eventing } from '../models/Eventing';
 import { Collection } from '../models/Collection';
 
-
 const rootUrl = 'http://localhost:3000/users';
+
+export interface UserProps {
+  name?: string;
+  age?: number;
+  id?: number;
+}
 
 export class User extends Model<UserProps> {
   static buildUser(attrs: UserProps): User {
@@ -28,5 +32,4 @@ export class User extends Model<UserProps> {
     const age = Math.round(Math.random() * 100);
     this.set({ age })
   }
-
 }
