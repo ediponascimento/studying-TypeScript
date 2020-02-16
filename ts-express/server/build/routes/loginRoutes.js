@@ -11,5 +11,10 @@ router.get('/login', function (req, res) {
 });
 router.post('/login', function (req, res) {
     var _a = req.body, password = _a.password, email = _a.email;
-    res.send("\n    email: " + email + "\n    password: " + password + "\n  ");
+    if (email) { // type guard
+        res.send(email);
+    }
+    else {
+        res.send('You must provide an email');
+    }
 });
