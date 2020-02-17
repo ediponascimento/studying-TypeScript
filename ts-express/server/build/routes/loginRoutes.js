@@ -3,9 +3,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var express_1 = require("express");
 var router = express_1.Router();
 exports.router = router;
-router.get('/', function (req, res) {
-    res.send('Hi there');
-});
 router.get('/login', function (req, res) {
     res.send("\n  \n    <form method=\"POST\">\n      <div>\n        <label>Email</label>\n        <input type=\"email\" name=\"email\" placeholder=\"e-mail\"/>\n      </div>\n      <div>\n        <label>Password</label>\n        <input type=\"password\" name=\"password\" placeholder=\"password\"/>\n      </div>\n      <button type=\"submit\">Login</button>\n    </form>\n  ");
 });
@@ -19,5 +16,13 @@ router.post('/login', function (req, res) {
     }
     else {
         res.send('Invalid email or password');
+    }
+});
+router.get('/', function (req, res) {
+    if (req.session && req.session.loggedIn) {
+        res.send("\n      <div>\n        <div>You are logged in</div>\n        <a href=\"/logout\">Logout</a>\n      </div>\n    ");
+    }
+    else {
+        res.send("\n      <div>\n        <div>You are not logged in</div>\n        <a href=\"/Login\">Login</a>\n      </div>\n    ");
     }
 });
