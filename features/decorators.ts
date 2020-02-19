@@ -5,23 +5,25 @@ class Boat {
         return `The color is ${this.color}`;
     }
 
-    @logError
+    @logError('Opps! Boat was sink')
     showColor(): void {
         throw new Error();
         console.log(`I'm a method`);
     }
 }
-
-function logError(target: any, key: string, desc: PropertyDescriptor): void {
-    const method = desc.value;
-
-    desc.value = function() {
-        try {
-            method();
-        } catch (err) {
-            console.log('Opps, boat wad sunk');
+function logError(errorMessage: string) {
+    return function (target: any, key: string, desc: PropertyDescriptor): void {
+        const method = desc.value;
+    
+        desc.value = function() {
+            try {
+                method();
+            } catch (err) {
+                console.log(errorMessage);
+            }
         }
     }
 }
+
 
 new Boat().showColor();
