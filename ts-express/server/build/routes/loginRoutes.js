@@ -28,7 +28,7 @@ router.get('/', function (req, res) {
         res.send("\n      <div>\n        <div>You are logged in</div>\n        <a href=\"/logout\">Logout</a>\n      </div>\n    ");
     }
     else {
-        res.send("\n      <div>\n        <div>You are not logged in</div>\n        <a href=\"/Login\">Login</a>\n      </div>\n    ");
+        res.send("\n      <div>\n        <div>You are not logged in</div>\n        <a href=\"/auth/login\">Login</a>\n      </div>\n    ");
     }
 });
 router.get('/logout', function (req, res) {
