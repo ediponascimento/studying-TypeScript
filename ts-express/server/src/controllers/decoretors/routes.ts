@@ -6,7 +6,7 @@ export function routeBind(method: string) {
   return function (path: string) {
     return function (target: any, key: string) {
       Reflect.defineMetadata(MetadataKeys.path, path, target, key);
-      Reflect.defineMetadata(MetadataKeys.path, method, target, key);
+      Reflect.defineMetadata(MetadataKeys.method, method, target, key);
     }
   }
 }
